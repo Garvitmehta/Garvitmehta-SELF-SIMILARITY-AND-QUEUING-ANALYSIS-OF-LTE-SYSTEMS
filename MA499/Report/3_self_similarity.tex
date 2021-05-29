@@ -1,0 +1,56 @@
+\chapter{Self-similarity}
+
+\section{What is self similarity?}
+
+LTE is a recent advancement in telecommunication systems, and the design of its traffic is of particular interest. Since LTE technology is rapidly expanding in terms of coverage and user base, it is essential to investigate its network traffic. Since data traffic is the most common form of traffic in LTE, this study focuses on the evidence that LTE data traffic has a clear Self-Similarity property. Based on the given parameters, the intensity of this Self-Similarity property is evaluated in LTE networks.
+
+ If the network traffic was essentially a Poisson or Markovian arrival process, the burst arrivals should have been smoothed out over a long time period.But, measuring of real traffic data indicates that there is a significant burstiness (traffic variance) present even in a wide time scale.
+ 
+ Self-Similarity is the property we can associate with an object whose appearance remains same irrespective of the scale at which it is viewed. Self-Similarity is used in the distributional sense in the case of stochastic objects like time series: the object's correlational structure remains unchanged when presented at different scales. As a consequence, at a variety of time scales, such a time series experiences bursts.
+ 
+A bursty traffic can be described statistically using self-similarity. Since bursts are observed on all time scales, traffic at certain time are generally correlated with traffic at a future time.
+
+
+
+It has the property that when a time series is aggregated by summing the original data points the resulting time series has the same auto-correlation function as the original time series.
+
+Mathematically, for a time series $X = (X_t : t=0,1,2,....)$, the m aggregated series, $X^{(m)}=(X_k^{(m)}:k=0,1,2,....)$ by summing the original series $X$ over non-overlapping blocks of size m. If X is self similar, it has the same auto-correlation function $r(k)=E[(X_t-\mu)(X_{t+k}-\mu)]$ as $X^{(m)}$ for all m. This is referred as distributionally self-similar. Self-similar time series shows long-range dependence, $r(k) \sim k^{-\beta}$ as $k\to\infty$ where $0<\beta<1 $.
+
+Self similarity is expressed using a single variable, representing the speed of decay of autocorrelation function known as Hurst parameter $H=1-\beta/2$.
+
+For self similar series $1/2<H<1$, when $H\to1$, degree of self-similarity increase. 
+
+\subsection{Existence of self similarity}
+
+There are several arguments made by researchers about why the Internet traffic is self-similar ranging from file size distribution on  web servers, ON/OFF models of heavily tailed distribution, user behavior, network protocols, buffer in routers and the TCP congestion avoidance algorithms.
+
+Extensive statistical analysis shows that the data at the
+level of user equipment or source-destination pairs are self-similar and exhibit high variability.
+
+\subsection{Effects of self similarity}
+
+Self-Similarity in network traffic results to packet loss. When traffic
+increases  to threshold the bandwidth and the router buffer sizes can't handle the bursts, resulting in packet lost. Packet lost is money lost for network operators. In certain situations the lost packets are sent again which again leads to congestion and wastage of resources. Some methods are used to control traffic.
+
+Predictive feedback control method uses dynamic traffic flow control, by adjusting congestion based on either nodes have on-set of concentrated periods of high or low activity.
+
+Error correction method uses re-transmission of non viable data like streaming audio or video. The level of redundancy is adjusted according to the congestion level. This method has the risk of damaging the congestion level due to high traffic from these nodes.
+
+\section{Hurst Parameter}
+The Hurst parameter, also known as the Self-Similarity parameter, is a measure of time series long-term memory. It has to do with time series autocorrelation and the rate at which it decreases as the lag between pairs of values increases.It denotes a time series's proclivity to regress strongly to the mean or cluster in a particular direction.
+
+A time series with a value H in the range of 0.5-1 has long-term positive autocorrelation, which means that a high value in the series will almost certainly be accompanied by another high value, and that the values in the future will also appear to be high.A value in the range of 0 to 0.5 means a time series of long-term swapping between high and low values in adjacent pairs, implying that a single high value will most likely be replaced by a low value, and the value after that will appear to be high, with the propensity to transition between high and low values lasting a long time. H=0.5 may seem to be the value for a fully uncorrelated series, but it is actually the value for series in which the autocorrelation at small time lags may be positive or negative, but the absolute values of the autocorrelation decay exponentially to zero.
+
+There are a number of methods to calculate hurst parameter like, Variance-time plot, R/S plot, Whittle's Estimator, we used Variance-time plot to estimate H,
+
+For a self-similar process, the variance of the aggregated time series follows ,
+\[
+Var(X^{(m)})\approx \frac{Var(X)}{m^\beta}
+\]
+Taking logarithm on both sides give us,
+\[
+log[Var(X^{(m)})]\approx log[Var(X)]-\beta log(m)
+\]
+
+Since $Var(X)$ is constant, if we plot $Var(X^{(m)})$ and $m$ on log-log plot, we should get a straight line with slope $ -\beta$
+

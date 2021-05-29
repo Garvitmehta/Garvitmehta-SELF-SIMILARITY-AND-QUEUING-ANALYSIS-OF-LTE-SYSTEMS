@@ -1,0 +1,12 @@
+\chapter{Conclusions}
+
+
+This thesis work started with understanding the basics of queuing systems like queue notation, Markovian processes, performance metrics like mean length of queue/system, mean waiting time in a queue/system and the relation between LTE networks and queuing systems. Next we saw that the basic queue model M/M/1 doesn't take care of the important aspects of a traffic in a LTE network. We study what a queue model must consist to behave like an LTE network. So we study Nburst/M/1 model which takes into consideration of the burstiness of the packet arrivals in the network and look into the performance metrics of the system analytically.
+
+Next we study about self-similarity and see why an LTE network has self-similarity.We also look into the effects of self-similarity. We study different ways to calculate Hurst parameter to find the degree of self-similarity.
+
+We analyse a data set consisting of network traffic at 4G cell stations which is collected over a certain time period and we use Variance-time plot to determine the Hurst parameter of the network, this is done for several datasets. Further we look into the traffic analysis of network by plotting average traffic per hour in a week and average traffic per day in a week.
+
+Next we implemented M/M/1 queue model in ns3 simulator and verified the previously studied results by plotting idle time proportion of the queue, mean length of the queue, mean delay of the packet for varying arrival rates.
+
+Since the calculated Hurst parameters for the analysed LTE dataset are close to 0.8 which is greater than 0.5, we proved that the LTE network traffic is self-similar ,and hence bursty in nature. So we can conclude that Nburst/M/1 model is a suitable model to analyse LTE netwroks.

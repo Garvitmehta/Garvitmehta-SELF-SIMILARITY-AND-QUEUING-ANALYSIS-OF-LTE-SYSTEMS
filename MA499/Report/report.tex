@@ -1,0 +1,168 @@
+\documentclass[12pt,a4paper]{report}
+
+\usepackage{amsthm,amssymb,mathrsfs,setspace,amsmath} %latexsym,footmisc
+
+% \usepackage{pstcol}
+% \usepackage{play}
+\usepackage{epsfig}
+%\usepackage[grey,times]{quotchap}
+\usepackage[nottoc]{tocbibind}
+\usepackage{float}
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
+%
+
+\input xy
+\xyoption{all}
+
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{notation}[theorem]{Notation}
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\renewcommand{\baselinestretch}{1.5}
+
+
+
+
+\begin{document}
+
+%\pagenumbering{arabic} \setcounter{page}{1}
+
+% --------------- Title page -----------------------
+
+\begin{titlepage}
+\enlargethispage{3cm}
+
+\begin{center}
+
+\vspace*{-2cm}
+
+%\textbf{\Large STUDYING PERFORMANCE OF LTE NETWORKS WITH QUEUING SYSTEMS }
+\textbf{\Large SELF SIMILARITY AND QUEUING ANALYSIS OF LTE SYSTEMS}
+
+\vfill
+
+ A Project Report Submitted \\
+ in Partial Fulfilment of the Requirements\\
+for the Degree of\\[1cm]
+
+
+{\bf\Large\ BACHELOR OF TECHNOLOGY }\\[.1in]
+\textbf{in}\\
+\textbf{Mathematics and Computing}
+
+ \vfill
+
+{\large \emph{by}}\\[5pt]
+{\large\bf {Prem Sujan Kotta (170123027)}}\\[5pt]
+{\large\bf{and}}\\[5pt]
+{\large\bf Garvit Mehta (170123018)}
+
+\vfill
+\includegraphics[height=2.5cm]{iitglogo}
+
+\vspace*{0.5cm}
+
+{\em\large to the}\\[10pt]
+{\bf\large DEPARTMENT OF MATHEMATICS} \\[5pt]
+{\bf\large \mbox{INDIAN INSTITUTE OF TECHNOLOGY GUWAHATI}}\\[5pt]
+{\bf\large GUWAHATI - 781039, INDIA}\\[10pt]
+{\it\large April 2021}
+\end{center}
+
+\end{titlepage}
+
+\clearpage
+
+% --------------- Certificate page -----------------------
+\pagenumbering{roman} \setcounter{page}{2}
+\begin{center}
+{\Large{\bf{CERTIFICATE}}}
+\end{center}
+%\thispagestyle{empty}
+
+
+\noindent
+This is to certify that the work contained in this project report entitled 
+“SELF SIMILARITY AND QUEUING ANALYSIS OF LTE SYSTEMS” submitted by Prem Sujan Kotta (170123027) and Garvit Mehta (170123018) 
+to the Department of Mathematics, Indian Institute of Technology Guwahati towards partial requirement of
+Bachelor of Technology in Mathematics and Computing has been carried out by them under
+my supervision. \\
+
+\noindent
+It is also certified that this report is a survey work based on the references
+in the bibliography.\\
+
+\noindent
+Turnitin Similarity: 21 \%
+%
+
+\vspace{4cm}
+
+\noindent Guwahati - 781 039 \hfill   (Prof. Selvaraju N.)
+
+\noindent April 2021 \hfill Project Supervisor
+
+\clearpage
+
+% --------------- Abstract page -----------------------
+\begin{center}
+{\Large{\bf{ABSTRACT}}}
+\end{center}
+
+
+The main aim of the project is to analyse self-similar property of LTE network traffic to understand burstiness of the network. We also provide a Queuing Model in the context of LTE Networks and establish various performance metrics for them. We then calculate the hurst parameter for traffic accumulated at several base stations. We will also simulate M/M/1 queuing system using NS3 and derive performance metrics experimentally.
+
+
+
+\clearpage
+
+
+
+\tableofcontents
+\clearpage
+\listoffigures
+
+
+\newpage
+
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+% =========== Main chapters starts here. Type in separate files and include the filename here. ==
+% ============================
+
+\input 1_Introduction.tex
+
+
+\input 2_nburst.tex
+
+
+\input 3_self_similarity.tex
+
+\input 4_traffic_analysis.tex
+
+\input 5_MM1_simulation.tex
+
+%\input future_work.tex
+
+\input Conclusions.tex
+
+\nocite{fundamentals}\nocite{influ}\nocite{comp}\nocite{self}\nocite{CrovellaBestavros97}\nocite{282603}\nocite{10.1214/ss/1177010131}\nocite{beran1994statistics}
+
+\bibliographystyle{plain}
+\bibliography{bib.bib}
+
+\end{document}
+
